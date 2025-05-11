@@ -48,7 +48,7 @@ public class MapperBuilder(IServiceProvider services) : IMapperBuilder
 
         if (builders.ContainsKey(typeof(TTo)))
         {
-            throw new AlreadyMappedException(typeof(TFrom), typeof(TTo), "There is already an adapter registered for the specified types.");
+            throw new AlreadyMappedException(typeof(TFrom), typeof(TTo), $"There is already an adapter registered for types {typeof(TFrom)} -> {typeof(TTo)}.");
         }
 
         return builders;

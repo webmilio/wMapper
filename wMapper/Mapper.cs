@@ -11,10 +11,15 @@ public class Mapper(IDictionary<Type, IDictionary<Type, AdapterBoxer>> adapters)
 {
     public T Adapt<T>(object src, Type srcType)
     {
-        if (!adapters.TryGetValue(srcType, out var fromAdpt) ||
-            !fromAdpt.TryGetValue(typeof(T), out var toAdpt))
+        var toType = typeof(T);
+        if (!adapters.TryGetValue(srcType, out var fromAdpt))
         {
-            throw new NotMappedException(srcType, typeof(T), "No mapping registered for the specified types.");
+            throw new NotMappedException(srcType, typeof(T), $"No adapter registered for type from: {srcType} -> {toType}.");
+        }
+
+        if (!fromAdpt.TryGetValue(toType, out var toAdpt))
+        {
+            throw new NotMappedException(srcType, toType, $"No adapter registered for type to: {srcType} -> {toType}.");
         }
 
         return (T)toAdpt(src!);
