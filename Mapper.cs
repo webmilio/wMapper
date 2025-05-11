@@ -1,6 +1,4 @@
-﻿using Webmilio.Site.Mapper;
-
-namespace wMapper;
+﻿namespace wMapper;
 
 public interface IMapper
 {

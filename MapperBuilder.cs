@@ -1,7 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Concurrent;
-using Webmilio.Site.Mapper;
-using wMapper;
 using AdapterBoxer = wMapper.Mapper.AdapterBoxer;
 
 namespace wMapper;
@@ -54,28 +52,22 @@ public class MapperBuilder(IServiceProvider services) : IMapperBuilder
 
         object Box(object value)
         {
-            
+            TAdapter adapter;
+
+            if (_cache.TryGetValue(typeof(TAdapter), out var cachedAdapter))
+            {
+                adapter = (TAdapter)cachedAdapter;
+            }
+            else
+            {
+                adapter = ActivatorUtilities.CreateInstance<TAdapter>(services);
+                _cache.TryAdd(typeof(TAdapter), adapter);
+            }
+
             return adapter.Adapt((TFrom)value)!;
         }
 
         builders.Add(typeof(TTo), () => Box);
         return this;
-    }
-
-    private T GetOrCreateAdapter<T>()
-    {
-        T adapter;
-
-        if (_cache.TryGetValue(typeof(T), out var cachedAdapter))
-        {
-            adapter = (T)cachedAdapter;
-        }
-        else
-        {
-            adapter = ActivatorUtilities.CreateInstance<T>(services);
-            _cache.TryAdd(typeof(T), adapter!);
-        }
-
-        return adapter;
     }
 }
