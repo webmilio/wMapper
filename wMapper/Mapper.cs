@@ -1,28 +1,17 @@
 ﻿namespace wMapper;
 
+public delegate object AdapterBoxer(object src);
+
 public interface IMapper
 {
     T Adapt<T>(object src, Type srcType);
 }
 
-public class Mapper(IDictionary<Type, IDictionary<Type, Mapper.AdapterBoxer>> boxers) : IMapper
+public class Mapper(IDictionary<Type, IDictionary<Type, AdapterBoxer>> adapters) : IMapper
 {
-    public delegate object AdapterBoxer(object src);
-
-    public TTo Adapt<TFrom, TTo>(TFrom src)
-    {
-        if (!boxers.TryGetValue(typeof(TFrom), out var fromBoxers) ||
-            !fromBoxers.TryGetValue(typeof(TTo), out var toBoxer))
-        {
-            throw new NotMappedException(typeof(TFrom), typeof(TTo), "No mapping registered for the specified types.");
-        }
-
-        return (TTo)toBoxer(src!);
-    }
-
     public T Adapt<T>(object src, Type srcType)
     {
-        if (!boxers.TryGetValue(srcType, out var fromAdpt) ||
+        if (!adapters.TryGetValue(srcType, out var fromAdpt) ||
             !fromAdpt.TryGetValue(typeof(T), out var toAdpt))
         {
             throw new NotMappedException(srcType, typeof(T), "No mapping registered for the specified types.");

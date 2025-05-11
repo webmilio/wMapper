@@ -2,5 +2,5 @@
 
 public interface IAdapter<TFrom, TTo>
 {
-    TTo Adapt(TFrom from);
+    TTo Adapt(TFrom src);
 }
