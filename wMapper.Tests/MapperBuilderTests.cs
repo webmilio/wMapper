@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.Design;
-using static wMapper.Tests.Classes;
+using static WMapper.Tests.Classes;
 
-namespace wMapper.Tests;
+namespace WMapper.Tests;
 
 [TestClass]
 public sealed class MapperBuilderTests

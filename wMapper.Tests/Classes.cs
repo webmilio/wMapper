@@ -1,4 +1,4 @@
-﻿namespace wMapper.Tests;
+﻿namespace WMapper.Tests;
 
 public class Classes
 {

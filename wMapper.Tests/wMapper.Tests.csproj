@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\wMapper\wMapper.csproj" />
+    <ProjectReference Include="..\wMapper\WMapper.csproj" />
   </ItemGroup>
 
   <ItemGroup>

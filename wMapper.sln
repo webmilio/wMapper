@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wMapper", "wMapper\wMapper.csproj", "{D8C860A9-CCDC-CD9B-1BE9-FBEF4559F2B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WMapper", "WMapper\WMapper.csproj", "{D8C860A9-CCDC-CD9B-1BE9-FBEF4559F2B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wMapper.Tests", "wMapper.Tests\wMapper.Tests.csproj", "{21BA0AA7-AC8E-4E49-9AF1-E1C95C3FE796}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WMapper.Tests", "WMapper.Tests\WMapper.Tests.csproj", "{21BA0AA7-AC8E-4E49-9AF1-E1C95C3FE796}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wMapper.Samples", "wMapper.Samples\wMapper.Samples.csproj", "{A0E850A6-DF5D-4646-8AC5-0598BF41BA1E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WMapper.Samples", "WMapper.Samples\WMapper.Samples.csproj", "{A0E850A6-DF5D-4646-8AC5-0598BF41BA1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

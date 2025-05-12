@@ -1,4 +1,4 @@
-﻿namespace wMapper;
+﻿namespace WMapper;
 
 [Serializable]
 public class NotMappedException : MapperExceptionException

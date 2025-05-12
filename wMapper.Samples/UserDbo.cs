@@ -1,4 +1,4 @@
-﻿namespace wMapper.Samples;
+﻿namespace WMapper.Samples;
 
 public class UserDbo
 {

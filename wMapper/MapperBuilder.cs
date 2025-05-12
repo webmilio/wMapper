@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Concurrent;
 
-namespace wMapper;
+namespace WMapper;
 
 public interface IMapperBuilder
 {

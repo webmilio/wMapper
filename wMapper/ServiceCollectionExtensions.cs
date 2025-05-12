@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace wMapper;
+namespace WMapper;
 
 public static class ServiceCollectionExtensions
 {

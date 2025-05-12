@@ -1,4 +1,4 @@
-﻿namespace wMapper;
+﻿namespace WMapper;
 
 public delegate object AdapterBoxer(object src);
 

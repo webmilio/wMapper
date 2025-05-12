@@ -1,4 +1,4 @@
-﻿namespace wMapper;
+﻿namespace WMapper;
 
 public interface IAdapter<TFrom, TTo>
 {

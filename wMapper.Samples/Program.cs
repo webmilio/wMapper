@@ -2,7 +2,7 @@
 using System.ComponentModel.Design;
 using System.Text.Json;
 
-namespace wMapper.Samples;
+namespace WMapper.Samples;
 
 internal class Program
 {
