@@ -1,9 +1,9 @@
-# wMapper
+# WMapper
 
-wMapper is a very simple object-to-object mapper. It was created to be extremely plug-and-play, meaning one library, a few lines to add the service, and everything else is you defining your mappings. As of today, there is no auto-mapping.
+WMapper is a very simple object-to-object mapper. It was created to be extremely plug-and-play, meaning one library, a few lines to add the service, and everything else is you defining your mappings. As of today, there is no auto-mapping.
 
 Example usage: 
-You can find a sample [here](wMapper.Samples/Program.cs).
+You can find a sample [here](WMapper.Samples/Program.cs).
 
 The setup is straightforward. For any service-related usage, use the `services.AddMapper(options => ...)` extension method provided.
 For example:
